@@ -1,5 +1,4 @@
-
-# MERMAID
+# FLOW
 
 ```mermaid
 flowchart TD
