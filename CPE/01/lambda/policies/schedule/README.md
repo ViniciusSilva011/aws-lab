@@ -41,7 +41,7 @@ SCHEDULER_ROLE_ARN=$(aws iam get-role \
 
 aws scheduler create-schedule \
   --name start-t1-elb-at-0900 \
-  --schedule-expression "cron(0 20 ? * MON-THU,SAT-SUN *)" \
+  --schedule-expression "cron(0 9 ? * MON-THU,SAT-SUN *)" \
   --schedule-expression-timezone "Europe/Lisbon" \
   --flexible-time-window '{"Mode":"OFF"}' \
   --target "$(jq -n \
@@ -52,7 +52,7 @@ aws scheduler create-schedule \
 
 aws scheduler create-schedule \
   --name terminate-t1-elb-at-2000 \
-  --schedule-expression "cron(0 9 ? * MON-THU,SAT-SUN *)" \
+  --schedule-expression "cron(0 20 ? * MON-THU,SAT-SUN *)" \
   --schedule-expression-timezone "Europe/Lisbon" \
   --flexible-time-window '{"Mode":"OFF"}' \
   --target "$(jq -n \
@@ -61,3 +61,19 @@ aws scheduler create-schedule \
     --arg input '{"action":"terminate"}' \
     '{Arn:$arn, RoleArn:$role, Input:$input}')"
 ```
+
+## OR DELETE SCHEDULERS
+```SH
+aws scheduler delete-schedule --name start-t1-elb-at-0900
+aws scheduler delete-schedule --name terminate-t1-elb-at-2000
+```
+
+## INSPECT SCHEDULERS
+
+```SH
+for name in $(aws scheduler list-schedules --query 'Schedules[].Name' --output text); do
+  echo "===== $name ====="
+  aws scheduler get-schedule --name "$name"
+done
+```
+
