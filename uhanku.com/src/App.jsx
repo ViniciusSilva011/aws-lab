@@ -1,6 +1,11 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import Landing from './Landing'
-import Me from './me/Me'
+
+const Me = lazy(() => import('./me/Me'))
+
+function RouteFallback() {
+  return <main style={{ minHeight: '100vh' }}>Loading...</main>
+}
 
 function App() {
   const [path, setPath] = useState(() => window.location.pathname.replace(/\/+$/, '') || '/')
@@ -28,11 +33,11 @@ function App() {
     setPath(normalizedPath)
   }
 
-  if (path === '/me') {
-    return <Me />
-  }
-
-  return <Landing onNavigate={navigate} />
+  return (
+    <Suspense fallback={<RouteFallback />}>
+      {path === '/me' ? <Me /> : <Landing onNavigate={navigate} />}
+    </Suspense>
+  )
 }
 
 export default App

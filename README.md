@@ -1,3 +1,25 @@
+<p align="center">
+  <img src="assets/icon.png" alt="AWS lab icon" width="96" />
+</p>
+
+<p align="center"><strong>AWS LAB</strong></p>
+
+<p align="center">
+  <img alt="AWS" src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white" />
+  <img alt="Lambda" src="https://img.shields.io/badge/Lambda-FD8D3C?style=for-the-badge&logo=awslambda&logoColor=white" />
+  <img alt="EC2" src="https://img.shields.io/badge/EC2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white" />
+  <img alt="EventBridge" src="https://img.shields.io/badge/EventBridge-7B5CFF?style=for-the-badge&logo=amazoneventbridge&logoColor=white" />
+  <img alt="S3" src="https://img.shields.io/badge/S3-569A31?style=for-the-badge&logo=amazons3&logoColor=white" />
+  <img alt="CloudFront" src="https://img.shields.io/badge/CloudFront-2F6BFF?style=for-the-badge&logo=amazoncloudfront&logoColor=white" />
+  <br />
+  <img alt="React" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img alt="Vite" src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000000" />
+  <img alt="GSAP" src="https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white" />
+</p>
+
+This repository documents my AWS study environment.
+
 # FLOW
 
 ```mermaid
@@ -21,7 +43,7 @@ flowchart TD
 <br>
 <br>
 
-# CURRENT BILLING
+# CURRENT STUDY BILLING
 
 | Item                                                       |               Estimate |
 | ---------------------------------------------------------- | ---------------------: |

@@ -3,7 +3,8 @@
 ## SYNC S3
 
 ```SH
-aws s3 sync frontend/dist s3://YOUR_BUCKET_NAME \
+npm run build
+aws s3 sync dist s3://YOUR_BUCKET_NAME \
  --delete
 ```
 
